@@ -95,6 +95,7 @@ export default function CalculatorModal({ type }) {
     newFormData.append("visualDisease", settings.visualDisease)
 
     const setAccessibility = async () => {
+      // Corrección: Ese console.log es innecesario, no aporta información útil y puede confundir al usuario
       console.log("entraaa")
       try {
         const res = await fetch(
