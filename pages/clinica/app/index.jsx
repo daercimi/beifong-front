@@ -8,6 +8,10 @@ export default function ClinicApp() {
 
   useEffect(() => {
     const token = JSON.parse(window.localStorage.getItem("token"))
+
+    // FIX ME: Solo se verifica la existencia del token, no se comprueba la validez del mismo
+    // ni si existe un usuario asociado a este token. Debe validarse con el backend y actualizar el 
+    // estado global de la aplicación para evitar repetir el mismo useEffect en cada página
     if (!token) {
       router.push("/clinica/login")
     }
