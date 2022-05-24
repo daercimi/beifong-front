@@ -1,3 +1,4 @@
+// FIXME: Eliminar hook sin utilizar ya que se está utilizando una dependencia que realiza esta funcionalidad.
 import { useState, useEffect } from "react"
 
 // using localStorage to store the dark mode state
