@@ -137,6 +137,8 @@ export default function ActualizarFecha() {
                 Cita médica
               </h1>
               <div className="grid grid-cols-1 gap-4 mb-8">
+                // FIXME: Las opciones del select no deben ingresarse manualmente, ya que esta información debe manejarse desde la base de datos 
+                // y cargarse dinámicamente. Se sugiere añadir un Hook para manejar la lista de especialidades, y usar un map para el render.
                 <SelectInput
                   label="Especialidad"
                   name="specialty"
