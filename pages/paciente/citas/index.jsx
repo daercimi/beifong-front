@@ -9,6 +9,13 @@ export default function MyAppointments({ updateTooltip }) {
     const getAppointmentsByUser = async () => {
       const token = JSON.parse(window.localStorage.getItem("token"))
       const patient = JSON.parse(window.localStorage.getItem("patient"))
+      /**
+       * FIXME: Las llamadas a endpoints deberian estar centralizadas en servicios de acuerdo al recurso
+       * (en este caso las citas), de otra forma es muy complicado de mantener. Por ejemplo cuando el backend
+       * modifique el method, alguna palabra de la ruta o los headers se tendría que buscar todos los
+       * componentes que usen tal endpoint, pero si tenemos esto centralizado en un servicio simplemente 
+       * tenemos que acceder al servicio y hacer la modificacion correspondiente en ese único lugar.
+       */
       const response = await fetch(
         `${process.env.NEXT_PUBLIC_BEIFONG_API_URL}/api/clinicalAppointments/${patient.patientId}/patient`,
         {
